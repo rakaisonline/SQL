@@ -1,0 +1,563 @@
+
+							
+								    CREATED BY SUDHANSHU RANJAN
+								____________________________________
+
+
+------------------------------------------------------------------
+CHEATSHEET: https://www.mysqltutorial.org/mysql-cheat-sheet.aspx
+------------------------------------------------------------------
+Tools/Links Used: MySQL, goormIDE, OneCompiler
+------------------------------------------------------------------
+--Session (1-4) will be uploaded soon. --
+
+Session-5
+===============
+create table students(
+student_id int AUTO_INCREMENT,
+student_fname varchar(30) NOT NULL,
+student_lname varchar(30) NOT NULL,
+student_mname varchar(30),
+student_email varchar(30) NOT NULL,
+student_phone varchar(15) NOT NULL,
+student_alternate_phone varchar(15),
+enrollment_date TIMESTAMP NOT NULL,
+selected_course int NOT NULL DEFAULT 1,
+years_of_exp int NOT NULL,
+student_company varchar(30),
+batch_date varchar(30) NOT NULL,
+source_of_joining varchar(30) NOT NULL,
+location varchar(30) NOT NULL,
+primary key (student_id),
+unique key (student_email),
+FOREIGN KEY(selected_course) REFERENCES courses(course_id)
+);
+
+alter table students modify column firstname varchar(30)
+
+insert into students (student_ fname, student_lname, student_email,student_phone, selected_course, 
+years_of_exp, student_company, batch_date, source_of_joining, location) values('jaspreet',
+'bumrah', 'jaspreet@gmail.com', '9595959595', 5, 13, 'walmart', '19-02-2021', 'quora', 'chennai');
+
+insert into students (student_fname, student_lname, student_email, student_phone, years_of_exp, student_company, batch_date,
+source_of_joining, location) values('jasprit', 'bumrah', 'jasprit@gmail.com', '9191919191', 4, 'walmart', '5-02-2021', 'linkedin',
+'bangalore');
+
+insert into students (student_fname, student_lname, student_email, student_phone, years_of_exp, student_company, batch_date,
+source_of_joining, location) values('rohit', 'sharma', 'rohit@gmail.com', '9696969696', 6, 'google', '7-02-2021', 'email',
+'bangalore');
+
+
+insert into students (student_fname, student_lname, student_email, student_phone, years_of_exp, student_company, batch_date,
+source_of_joining, location) values('kapil', 'dev', 'kd@gmail.com', '9595959595', 12, 'arcesium', '9-02-2021', 'quora',
+'bangalore');
+
+
+insert into students (student_fname, student_lname, student_email, student_phone, years_of_exp, student_company, batch_date,
+source_of_joining, location) values('ms', 'dhoni', 'msd@gmail.com', '9494949494', 7, 'microsoft', '15-02-2021', 'friend',
+'bangalore');
+
+
+insert into students (student_fname, student_lname, student_email, student_phone, years_of_exp, student_company, batch_date,
+source_of_joining, location) values('brian', 'lara', 'brian@gmail.com', '9999999999', 9, 'deshaw', '22-02-2021', 'linkedin',
+'bangalore');
+
+select student_id, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students;
+
+let us suppose the teacher who was teaching web develoment is leaving the institute, then in this scenario:
+
+delete from courses where course_id=4;
+
+the foreign key constraint is used to prevent actions that would destroy links between two tables..
+
+A foreign key is a field in one table that refers to the primary key in another table.
+
+selected_course is a foreign key in students table which refers to course_id (primary key) in courses table.
+
+the table with the foreign key is called the child table, 
+the table with the primary key is called the parent or referenced table.
+
+NOT NULL
+UNIQUE KEY
+PRIAMRY KEY
+FOREIGN KEY
+CHECK CONSTRAINT (not supported in mysql)
+
+constraints are used to limit the type of data that can go into a table.
+
+This ensures the acuracy and reliability of the data is maintained.
+
+If there is any violation then the action is aborted.
+
+Session-6
+==============
+Distinct
+ 
+ORDER BY
+
+LIMIT
+
+LIKE
+
+Distinct
+============
+select location from students;
+
+select DISTINCT location from students;
+
+select DISTINCT student_company from students;
+
+select DISTINCT source_of_joining from students;
+
+Order by (ascending, descending)
+=============
+
+select student_id, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students ORDER BY years_of_exp;
+
+SELECT student_fname from students order by student_fname; //by alphabetical order
+
+SELECT student_fname from students order by years_of_exp;
+
+SELECT student_fname, years_of_exp from students order by years_of_exp;
+
+SELECT student_fname, years_of_exp from students order by years_of_exp desc;
+
+SELECT student_fname, years_of_exp from students order by 2 desc;
+
+SELECT student_fname, years_of_exp from students order by 1 desc;
+
+SELECT student_fname, years_of_exp from students order by years_of_exp, student_fname;
+
+LIMIT
+===========
+
+select student_id, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students ORDER BY years_of_exp;
+
+Prolem Statement: get 3 candidates with least experience.
+
+select * from students limit 3;  
+
+select student_id, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students ORDER BY years_of_exp LIMIT 3; //least experience
+
+select student_id, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students ORDER BY years_of_exp desc LIMIT 3; // highest experience
+
+Prolem Statement: want to know from which sources last 5 candidates have enrolled?
+
+SELECT source of joining from students order by enrollment_date DESC LIMIT 5;
+
+SELECT source of joining from students order by years_of_exp DESC LIMIT 2; //highest experience
+
+--THIS QUERY WON'T WORK
+select DISTINCT source_of_joining from students order by enrollment_date DESC LIMIT 5; 
+
+select student_id, ENROLLMENT_DATE, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students ORDER BY enrollment_date desc LIMIT 1;
+
+--NOT POPULAR QUERIES--
+select * from students order by enrollment_date LIMIT 0,3; //first three enrollment
+
+select * from students order by enrollment_date LIMIT 3,2; //fourth and fifth enrollment
+
+LIKE
+=======
+
+select student_id, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students WHERE student_fname LIKE '%ri%';
+
+% is a wildcard character
+
+select student_id, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students WHERE student_fname LIKE '%it';
+
+select student_id, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students WHERE student_fname LIKE '_____';
+
+_____ is a wildcard character
+
+select student_id, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students WHERE student_fname LIKE '____';
+
+'%\_at' - not a wildcard character, tells the system that it is not a wildcard char.
+
+SESSION-7
+============
+
+select student_id, ENROLLMENT_DATE, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
+source_of_joining, location from students ORDER BY enrollment_date desc;
+
+SELECT source_of_joining FROM students;
+
+order of execution
+====================
+
+FROM (LOADING THE TABLE)
+
+SELECT (PROJECTING source_of_joining, enrollment_date);
+select source_of_joining, enrollment_date from students;
+
+DISTINCT
+select DISTINCT source_of_joining, enrollment_date from students;
+
+order by (based on enrollment_date it will order by)
+select source_of_joining, enrollment_date from students order by enrollment_date;
+
+select DISTINCT source_of_joining, enrollment_date from students order by enrollment_date;
+
+SESSION-8
+===========
+
+count
+=======
+
+Aggregate functions
+---------------------
+Ex:  i have to count the number of rows in a table,
+
+select count(*) from students;
+
+select count(student_company) from students;
+
+select (student_company) from students;
+
+select count(DISTINCT student_company) from students;
+
+select count(DISTINCT student_company) AS num_companies from students;
+
+select count(DISTINCT location) from students;
+
+select count(DISTINCT source_of_joining) from students;
+
+select batch_date from students;
+
+select count(*) from students where batch_date like '%-02-%';
+ 
+select count(*) from students where batch_date like '19-%';
+
+group by
+=========
+
+Required thing: want to know how many people have joined my course got to know about me through
+
+select source_of_joining, count(*) from students GROUP BY source_of_joining;
+
+select location,count(*) from students group by location;
+
+--this won't work
+select location,count(*) from students group by source_of_joining;
+
+select location, source_of_joining, count(*) from students group by location, source_of_joining ;
+
+select selected_course, count(*) from students group by selected_course;
+
+select batch_date, selected_course, count(*) from students group by batch_date, selected_course;
+
+MIN & MAX
+===========
+--this won't work
+select MIN(years_of_exp),student_fname from students;
+
+select student_fname from students order by years_of_exp limit 1;
+
+--each source of joining I want to get max experience
+
+select source_of_joining, years_of_exp from students;
+
+select source_of_joining, MAX(years_of_exp) from students group by source_of_joining;
+
+SUM
+=====
+select source_of_joining, sum(years_of_exp) from students group by source_of_joining;
+
+AVG
+====
+select source_of_joining, AVG(years_of_exp) from students group by source_of_joining;
+
+select location, AVG(years_of_exp) from students group by location;
+
+select student_company, AVG(years_of_exp) from students group by student_company;
+
+GROUP BY
+=========
+
+
+
+
+
+
+
+
+
+
+
+Session-9
+===========
+insert into courses values(4, 'data structure', 3.5, 20000);  //when entering a decimal value it truncates or round of the decimal value to the closest value.
+
+
+create table courses_new(
+course_id int NOT NULL,
+course_name varchar (30) NOT NULL,
+course_duration_months decimal(3,1) NOT NULL,
+course_fee int NOT NULL,
+PRIMARY KEY(course_id)
+);
+
+insert into courses_new values(1, 'big data', 5.5, 20000);
+
+insert into courses_new values(2, 'web development', 3.5, 20000);
+
+insert into courses_new values(3, 'data science', 6, 40000);
+
+update courses_new set course_fee = 50000 where course_id = 2;
+
+
+create table courses_new(
+course_id int NOT NULL,
+course_name varchar (30) NOT NULL,
+course_duration_months decimal(3,1) NOT NULL,
+course_fee int NOT NULL,
+changed_at TIMESTAMP DEFAULT NOW(),
+PRIMARY KEY(course_id)
+);
+ 
+insert into courses_new (course_id, course_name, course_duration_months, course_fee) values(1, 'big data', 5.5, 20000);
+
+insert into courses_new (course_id, course_name, course_duration_months, course_fee) values(2, 'web development', 3.5, 20000);
+
+insert into courses_new (course_id, course_name, course_duration_months, course_fee) values(3, 'data science', 6, 40000);
+
+insert into courses_new (course_id, course_name, course_duration_months, course_fee) values(4, 'devops', 10.5, 10000);
+
+create table courses_new(
+course_id int NOT NULL,
+course_name varchar (30) NOT NULL,
+course_duration_months decimal(3,1) NOT NULL,
+course_fee int NOT NULL,
+changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
+PRIMARY KEY(course_id)
+);
+
+insert into courses_new (course_id, course_name, course_duration_months, course_fee) values(1, 'big data', 5.5, 20000);
+
+insert into courses_new (course_id, course_name, course_duration_months, course_fee) values(2, 'web development', 3.5, 20000);
+
+insert into courses_new (course_id, course_name, course_duration_months, course_fee) values(3, 'data science', 6, 40000);
+
+insert into courses_new (course_id, course_name, course_duration_months, course_fee) values(4, 'devops', 10.5, 10000);
+
+SESSION-10
+============
+
+Logical Operators
+-----------------------
+
+select * from students where loaction = 'bangalore';
+
+// to get people who are not from bangalore
+select * from students where loaction != 'bangalore';
+
+//get all courses which have the word data
+select * from courses where course_name like '%data%';
+
+//get all courses which do not have the word data
+
+select * from courses where course_name not like '%data%';
+
+//all students from bangalore who joined through linkedin and have less than 8 years of experience
+select * from students where years_of_exp < 8 and source_of_joining = 'linkedin' and location='bangalore';
+
+// I want all people who do not fall between 8 to 12 years of experience.
+
+select * from students where years_of_exp < 8 and years_of_exp > 12;
+
+select * from students where years_of_exp < 8 or years_of_exp > 12;
+
+select * from students where years_of_exp between 8 and 12;
+
+select * from students where years_of_exp not between 8 and 12;
+
+//I want to get list of people working for flipkart, wallmart or microsoft
+select * from students where student_company = 'flipkart' or student_company = 'wallmart' or student_company = 'microsoft';
+ 
+select * from students where student_company in ('flipkart','wallmart','microsoft');
+
+select * from students where student_company not in ('flipkart','wallmart','microsoft');
+
+if a course is more than 4 months we catagorise it as masters program else it is diploma
+
+select course_id, course_name, course_fee, case when course_duration_months > 4 then 'masters' else 'diploma' end as course_type from courses;
+
+//people working for flipkart, wallmart and microsoft we  want to say prouct based and all other service based
+select student_id, student_fname, student_lname, student_company, case when
+student_company in ('flipkart', 'wallmart','microsoft') then 'product based' else 
+'service based' end as company_type from students;
+
+SESSION-11
+=============
+
+Joins
+
+2 tables
+==========
+Courses 
+Students
+
+i want to know in which course rahul has enrolled.
+
+Students
+===========
+
+student_fname, selected_course
+rahul,1
+
+Courses
+=========
+course_id, course_name
+1, big data
+
+select * from courses;
+
+select course_name from courses where course_id = (select selected_course from students where student_fname='jasprit');
+
+in students table selected_course
+in courses table course_id
+
+select students.student_fname, students.student_lname, courses.course_name from students join courses on students.selected_course = courses.course_id;
+
+by default it is a inner join
+
+select student_fname, selected_course from students;
+
+select course_id from courses; 
+
+a total of 4 course are there but only upto course-3 is selected by the students.
+
+only the matching records are considered non-matching records are discarded.
+
+Left outer join
+==================
+
+all the matching records are considered + 
+all the non-matching records in the left table which does not have the match in the right.
+
+select students.student_fname, students.student_lname, courses.course_name from students left join courses on students.selected_course = courses.course_id;
+
+right outer join
+=================
+
+all the matching records from left and right table are considered + 
+all the non-matching records in the right table which does not have 
+the match in the left padded with null.
+
+select students.student_fname, students.student_lname, courses.course_name from students right join courses on students.selected_course = courses.course_id;
+
+full outer join
+================
+
+all th matching records are shown +
+
+non matching records from left +
+
+non matching records from right
+
+select students.student_fname, students.student_lname, courses.course_name from students left join courses on students.selected_course = courses.course_id
+union
+select students.student_fname, students.student_lname, courses.course_name from students right join courses on students.selected_course = courses.course_id;
+
+Inner Join
+
+Left Outer Join
+
+Right Outer Join
+
+Full outer Join (union)
+
+Cross Join (not useful)
+
+select count(*) from students;\
+
+
+
+SESSION-12
+============
+
+Where vs Having clause in SQL (INTERVIEW ORIENTED)
+==============================
+
+select source_of_joining, count(*) from students group by source_of_joining;
+
+I want to know the lead sources through which more than 1 person has registered.
+
+select source_of_joining, count(*) as total from students group by source_of_joining where total > 1;
+-error
+
+where clause is used to filter the individual records before aggregation..
+
+select source_of_joining, count(*) as total from students group by source_of_joining having total > 1;
+
+//I want to know who registered through linkedIN
+
+select source_of_joining, count(*) as total from students group by source_of_joining having source_of_joining = 'linkedin';
+
+select source_of_joining, count(*) as total from students where source_of_joining = 'linkedin' group by source_of_joining;   
+
+can we use where and having in same query
+===========================================
+//the locations from which more than 1 student has joined & the students experience is more than 10 years
+
+select location, count(*) as total from students where years_of_exp > 10 group by location having total > 1;
+
+where is used before group by and do filtering on individual records.
+
+having is used after group by and do filtering on aggregated records.
+
+we can use where and having in the same query also.
+
+where is more performant than having..  
+
+
+
+SESSION-13
+============
+
+CREATE TABLE employee (
+firstname varchar(20),
+lastname varchar(20),
+age int,
+ salary int,
+location varchar(20)
+ );
+                             
+INSERT INTO employee VALUES ( 'sachin', 'sharma', 28, 10000,
+ 'bangalore');
+INSERT INTO employee VALUES ( 'shane', 'warne', 30, 20000,
+ 'bangalore');
+INSERT INTO employee VALUES ('rohit', 'sharma', 32, 30000,
+ 'hyderabad');
+INSERT INTO employee VALUES ('shikhar', 'dhawan', 32,
+25000, 'hyderabad');
+INSERT INTO employee VALUES ('rahul', 'dravid', 31, 20000,
+ 'bangalore');
+INSERT INTO employee VALUES ('saurabh', 'ganguly', 32,
+15000, 'pune');
+INSERT INTO employee VALUES ('kapil', 'dev' ,34, 10000,
+ 'pune');
+
+-- how many people are from each location and avg salary
+ at each location
+
+select location, count(location) ,avg(salary)
+from employee group by location;
+
+
+location	count(location)	avg(salary)
+bangalore	3	16666.6667
+hyderabad	2	27500.0000
+pune	2	12500.0000
+
+-- 
