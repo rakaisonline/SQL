@@ -42,10 +42,10 @@ Cross Join (not useful)
 
 Lec.12 - Where vs Having clause (Interview Oriented), Using Where and Having in same query.
 
-Lec.13 - Over Clause
+𝓛𝓮𝓬.13- 𝐎𝐯𝐞𝐫 𝐂𝐥𝐚𝐮𝐬𝐞 𝐬𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭𝐬 (interview oriented) ✔
 
-Lec.14 -
+𝓛𝓮𝓬.14 - 𝐑𝐨𝐰 𝐧𝐮𝐦𝐛𝐞𝐫 𝐟𝐮𝐧𝐜𝐭𝐢𝐨𝐧𝐬 (interview oriented) ✔
 
-Lec. 15 -
+𝓛𝓮𝓬.15 - 𝐑𝐚𝐧𝐤 and 𝐃𝐞𝐧𝐬𝐞 𝐑𝐚𝐧𝐤 (interview oriented) ✔
 
 
