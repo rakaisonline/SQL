@@ -11,7 +11,7 @@ Tools/Links Used: MySQL, goormIDE, OneCompiler
 ------------------------------------------------------------------
 --Session (1-4) will be uploaded soon. --
 
-Session-5
+Session-5 [4th Feb|11:30]
 ===============
 create table students(
 student_id int AUTO_INCREMENT,
@@ -90,7 +90,7 @@ This ensures the acuracy and reliability of the data is maintained.
 
 If there is any violation then the action is aborted.
 
-Session-6
+Session-6 [4th Feb]
 ==============
 Distinct
  
@@ -184,7 +184,7 @@ source_of_joining, location from students WHERE student_fname LIKE '____';
 
 '%\_at' - not a wildcard character, tells the system that it is not a wildcard char.
 
-SESSION-7
+SESSION-7 [4th Feb]
 ============
 
 select student_id, ENROLLMENT_DATE, selected_course, student_fname, student_email, years_of_exp, student_company, batch_date,
@@ -208,7 +208,7 @@ select source_of_joining, enrollment_date from students order by enrollment_date
 
 select DISTINCT source_of_joining, enrollment_date from students order by enrollment_date;
 
-SESSION-8
+SESSION-8 [4th Feb]
 ===========
 
 count
@@ -294,7 +294,7 @@ GROUP BY
 
 
 
-Session-9
+Session-9 [15th Feb]
 ===========
 insert into courses values(4, 'data structure', 3.5, 20000);  //when entering a decimal value it truncates or round of the decimal value to the closest value.
 
@@ -350,7 +350,7 @@ insert into courses_new (course_id, course_name, course_duration_months, course_
 
 insert into courses_new (course_id, course_name, course_duration_months, course_fee) values(4, 'devops', 10.5, 10000);
 
-SESSION-10
+SESSION-10 [16th Feb]
 ============
 
 Logical Operators
@@ -397,7 +397,7 @@ select student_id, student_fname, student_lname, student_company, case when
 student_company in ('flipkart', 'wallmart','microsoft') then 'product based' else 
 'service based' end as company_type from students;
 
-SESSION-11
+SESSION-11 [9th March]
 =============
 
 Joins
@@ -483,7 +483,7 @@ select count(*) from students;\
 
 
 
-SESSION-12
+SESSION-12 [9th March]
 ============
 
 Where vs Having clause in SQL (INTERVIEW ORIENTED)
@@ -522,7 +522,7 @@ where is more performant than having..
 
 
 
-SESSION-13
+SESSION-13 [9th March]
 ============
 
 CREATE TABLE employee (
