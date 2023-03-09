@@ -1,46 +1,29 @@
 # SQL
 # Hello everyone! I am posting all of my works I have learned and executed under DBMS, done using MYSQL software.
-Lec.1 - Introduction to DBMS
 
-Lec.2 - CRUD Operations, Simple Inserts, Multiple Inserts, Datatype, Mismatch, NULL and Not NULL, Default Values, Not NULL and Default Values.
+𝓛𝓮𝓬.1 - 𝐈𝐧𝐭𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐨𝐧 𝐭𝐨 𝐃𝐁𝐌𝐒 ✔ 
 
-Lec.3 - Primary Key, Auto Increment Key, Unique Key, Primary Key vs Unique Key
+𝓛𝓮𝓬.2  - 𝐂𝐑𝐔𝐃 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐨𝐧𝐬, 𝐒𝐢𝐦𝐩𝐥𝐞 𝐈𝐧𝐬𝐞𝐫𝐭𝐬, 𝐌𝐮𝐥𝐭𝐢𝐩𝐥𝐞 𝐈𝐧𝐬𝐞𝐫𝐭𝐬, 𝐃𝐚𝐭𝐚𝐭𝐲𝐩𝐞, 𝐌𝐢𝐬𝐦𝐚𝐭𝐜𝐡, 𝐍𝐔𝐋𝐋 and 𝐍𝐨𝐭 𝐍𝐔𝐋𝐋, 𝐃𝐞𝐟𝐚𝐮𝐥𝐭 values, 𝐍𝐨𝐭 𝐍𝐔𝐋𝐋 𝐚𝐧𝐝 𝐃𝐞𝐟𝐚𝐮𝐥𝐭 values ✔
 
-Lec.4 - Select, Update, DELETE statements, Alter, DDL vs DML commnands.
+𝓛𝓮𝓬.3  - 𝐏𝐫𝐢𝐦𝐚𝐫𝐲 𝐊𝐞𝐲, 𝐀𝐮𝐭𝐨 𝐈𝐧𝐜𝐫𝐞𝐦𝐞𝐧𝐭 𝐊𝐞𝐲, 𝐔𝐧𝐢𝐪𝐮𝐞 𝐊𝐞𝐲, 𝐏𝐫𝐢𝐦𝐚𝐫𝐲 𝐊𝐞𝐲 vs 𝐔𝐧𝐢𝐪𝐮𝐞 𝐊𝐞𝐲 ✔ 
 
-Lec.5 - NOT NULL
-UNIQUE KEY
-PRIAMRY KEY
-FOREIGN KEY
-CHECK CONSTRAINT
+𝓛𝓮𝓬.4- 𝐒𝐞𝐥𝐞𝐜𝐭, 𝐔𝐩𝐝𝐚𝐭𝐞, 𝐃𝐄𝐋𝐄𝐓𝐄 𝐬𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭𝐬, 𝐀𝐥𝐭𝐞𝐫, 𝐃𝐃𝐋 vs 𝐃𝐌𝐋 commands ✔
 
-Lec.6 - Distinct
- 
-ORDER BY
+𝓛𝓮𝓬.5 - 𝐍𝐎𝐓 𝐍𝐔𝐋𝐋, 𝐔𝐍𝐈𝐐𝐔𝐄 𝐊𝐄𝐘, 𝐏𝐑𝐈𝐌𝐀𝐑𝐘 𝐊𝐄𝐘, 𝐅𝐎𝐑𝐄𝐈𝐆𝐍 𝐊𝐄𝐘, 𝐂𝐇𝐄𝐂𝐊 𝐂𝐎𝐍𝐒𝐓𝐑𝐀𝐈𝐍𝐓 ✔
 
-LIMIT
+𝓛𝓮𝓬.6 - 𝐃𝐢𝐬𝐭𝐢𝐧𝐜𝐭, 𝐎𝐑𝐃𝐄𝐑 𝐁𝐘, 𝐋𝐈𝐌𝐈𝐓, 𝐋𝐈𝐊𝐄 statements ✔
 
-LIKE
+𝓛𝓮𝓬.7- 𝐎𝐫𝐝𝐞𝐫 𝐨𝐟 𝐞𝐱𝐞𝐜𝐮𝐭𝐢𝐨𝐧 ✔
 
-Lec.7 - Order of execution
+𝓛𝓮𝓬.8 - 𝐂𝐨𝐮𝐧𝐭, 𝐀𝐠𝐠𝐫𝐞𝐠𝐚𝐭𝐞 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧𝐬, 𝐆𝐫𝐨𝐮𝐩 𝐛𝐲, 𝐌𝐈𝐍 and 𝐌𝐀𝐗, 𝐒𝐔𝐌, 𝐀𝐕𝐆 data-types ✔
 
-Lec.8 - Count, Aggregate Functions, Group by, MIN and MAX, SUM, AVG.
+𝓛𝓮𝓬.9 - a few more data-types ✔
 
-Lec.9 - A few more datatypes
+𝓛𝓮𝓬.10 - 𝐋𝐨𝐠𝐢𝐜𝐚𝐥 𝐎𝐩𝐞𝐫𝐚𝐭𝐨𝐫𝐬 ✔ 
 
-Lec.10 - Logical Operators
+𝐋𝐞𝐜.11 - 𝐉𝐨𝐢𝐧𝐬, 𝐈𝐧𝐧𝐞𝐫 𝐉𝐨𝐢𝐧, 𝐋𝐞𝐟𝐭 𝐎𝐮𝐭𝐞𝐫 𝐉𝐨𝐢𝐧, 𝐑𝐢𝐠𝐡𝐭 𝐎𝐮𝐭𝐞𝐫 𝐉𝐨𝐢𝐧, 𝐅𝐮𝐥𝐥 𝐨𝐮𝐭𝐞𝐫 𝐉𝐨𝐢𝐧 (𝐮𝐧𝐢𝐨𝐧), 𝐂𝐫𝐨𝐬𝐬 𝐉𝐨𝐢𝐧 (𝐧𝐨𝐭 𝐮𝐬𝐞𝐟𝐮𝐥) ✔
 
-Lec.11 - Joins, Inner Join
-
-Left Outer Join
-
-Right Outer Join
-
-Full outer Join (union)
-
-Cross Join (not useful)
-
-Lec.12 - Where vs Having clause (Interview Oriented), Using Where and Having in same query.
+𝐋𝐞𝐜.12 - 𝐖𝐡𝐞𝐫𝐞 vs 𝐇𝐚𝐯𝐢𝐧𝐠 𝐜𝐥𝐚𝐮𝐬𝐞 (𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 𝐎𝐫𝐢𝐞𝐧𝐭𝐞𝐝), 𝐔𝐬𝐢𝐧𝐠 𝐖𝐡𝐞𝐫𝐞 and 𝐇𝐚𝐯𝐢𝐧𝐠 in same query ✔
 
 𝓛𝓮𝓬.13- 𝐎𝐯𝐞𝐫 𝐂𝐥𝐚𝐮𝐬𝐞 𝐬𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭𝐬 (interview oriented) ✔
 
